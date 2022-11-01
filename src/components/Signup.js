@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import {PersonCircle} from 'react-bootstrap-icons'
+import {EnvelopeFill} from 'react-bootstrap-icons'
+import {Person} from 'react-bootstrap-icons'
 const { REACT_APP_SERVER_URL } = process.env;
 
 const Signup = () => {
@@ -52,14 +55,14 @@ const Signup = () => {
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
-                    <h2 className="py-2">Signup</h2>
+                    <h2 className="py-2">Signup <PersonCircle/></h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="name">Name</label>
+                            <label htmlFor="name">Name <Person/></label>
                             <input type="text" name="name" value={name} onChange={handleName} className="form-control"/>
                         </div>
                         <div className="form-group">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Email <EnvelopeFill/></label>
                             <input type="email" name="email" value={email} onChange={handleEmail} className="form-control"/>
                         </div>
                         <div className="form-group">

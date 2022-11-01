@@ -20,3 +20,15 @@ body {
   text-align: center;
 }
 
+.github{
+  color: rgb(119, 119, 119);
+}
+.github:hover{
+  color:black;
+}
+.linkedin{
+  color: rgb(119, 119, 119);
+}
+.linkedin:hover{
+  color:black;
+}

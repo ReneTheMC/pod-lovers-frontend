@@ -1,5 +1,9 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import {BoxArrowInRight} from 'react-bootstrap-icons'
+import {BoxArrowLeft} from 'react-bootstrap-icons'
+import {PersonCircle} from 'react-bootstrap-icons'
+import {Search} from 'react-bootstrap-icons'
 
 const Navbar = (props) => {
     return (
@@ -17,6 +21,9 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <NavLink className="nav-link"  to="/about">About</NavLink>
                         </li>
+                        <li className="nav-item">
+                                <NavLink className="nav-link"  to="/search"><Search/> Search</NavLink>
+                            </li>
                     </ul>
                     {
                         props.isAuth 
@@ -25,15 +32,15 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link"  to="/profile">Profile</NavLink>
                             </li>
                             <li className="nav-item">
-                                <span onClick={props.handleLogout} className="nav-link logout-link">Logout</span>
+                                <span onClick={props.handleLogout} className="nav-link logout-link"><BoxArrowLeft/> Logout  </span>
                             </li>
                         </ul>
                         : <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <NavLink className="nav-link"  to="/signup">Create Account</NavLink>
+                                <NavLink className="nav-link"  to="/signup"><PersonCircle/> Create Account </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link"  to="/login">Login</NavLink>
+                                <NavLink className="nav-link"  to="/login"><BoxArrowInRight/> Login</NavLink>
                             </li>
                           </ul>
                     }
