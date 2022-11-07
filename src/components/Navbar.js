@@ -22,7 +22,10 @@ const Navbar = (props) => {
                             <NavLink className="nav-link"  to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                                <NavLink className="nav-link"  to="/search"><Search/> Search</NavLink>
+                                <NavLink className="nav-link"  to="/creator"><Search/> Creator</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link"  to="/favorite"><BoxArrowInRight/> Favorite</NavLink>
                             </li>
                     </ul>
                     {
@@ -41,6 +44,9 @@ const Navbar = (props) => {
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/login"><BoxArrowInRight/> Login</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link"  to="/favorite"><BoxArrowInRight/> Favorite</NavLink>
                             </li>
                           </ul>
                     }
