@@ -55,9 +55,9 @@ const handleSubmit = (e) => {
     })
     .catch(error => console.log(error));
   }
-//   const favoritesList = favorites.map((favorite, index) => {
-//     return <Favorite key={index} imageUrl={favorite.imageUrl} name={favorite.name} bio={favorite.bio} location={favorite.location}/>
-// })
+  const favoritesList = favorites.map((favorite, index) => {
+    return <Favorite key={index} imageUrl={favorite.imageUrl} name={favorite.name} bio={favorite.bio} location={favorite.location}/>
+})
   return (
   <div>
     <form onSubmit={handleSubmit}  action="/creators/results" method= 'POST' className="form-inline">
@@ -81,9 +81,9 @@ const handleSubmit = (e) => {
             {/* <AddtoFav addToFavList={addToFavList} name={creator.name} bio={creator.bio} location={creator.location}/> */}
           </div>
         ))}
-        {/* <div className= 'favorite'>
+        <div className= 'favorite'>
           {favoritesList}
-       </div> */}
+       </div>
      </div> 
   </div>   
        
