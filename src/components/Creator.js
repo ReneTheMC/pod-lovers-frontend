@@ -1,18 +1,21 @@
 import React, {useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import Favorite from './Favorite';
+import { Redirect } from 'react-router-dom';
+// import Favorite from './Favorite';
+import setAuthToken from '../utils/setAuthToken'
 // import Card from './Card'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 function Creator() {
   const [creators, setCreator] = useState([]);
-  const [favorites, setFavorites] = useState({})
   const [q, setQ]= useState('')
+  const [redirect, setRedirect]= useState(false)
   const handleChange = event => {
     setQ(event.target.value);
   }
 const handleSubmit = (e) => {
+  setAuthToken(localStorage.getItem('jwtToken'))
     e.preventDefault();
     const searchTerm = {q}
     axios.post(`${REACT_APP_SERVER_URL}/creators/results`, searchTerm)
@@ -37,27 +40,28 @@ const handleSubmit = (e) => {
   //     return <h1> There are no flights</h1>
   //   }
 
-  //  } 
-  function addToFavList( name, bio, location, imageUrl) {
+   //} 
+  function addToFavorite( pcid, name, bio, location, imageUrl) {
+    setAuthToken(localStorage.getItem('jwtToken'))
     axios({
       method: 'post',
-      url: `${REACT_APP_SERVER_URL}/creators/AddFavorites`,
+      url: `${REACT_APP_SERVER_URL}/users/AddFavorites`,
       data: {
+        pcid: pcid,
         name: name, 
-        bio: bio,
+        bio:bio,
         location: location,
         imageUrl: imageUrl
       }
     }).then(response => {
-      console.log(response.data.creator)
-      setFavorites(response.data.creator)
-      console.log(favorites)
+      console.log(response)
+      setRedirect(true)
+      // setFavorites(response.data.creator)
+      // console.log(favorites)
     })
     .catch(error => console.log(error));
   }
-  const favoritesList = favorites.map((favorite, index) => {
-    return <Favorite key={index} imageUrl={favorite.imageUrl} name={favorite.name} bio={favorite.bio} location={favorite.location}/>
-})
+if (redirect) return <Redirect to="/favorite" />
   return (
   <div>
     <form onSubmit={handleSubmit}  action="/creators/results" method= 'POST' className="form-inline">
@@ -77,13 +81,10 @@ const handleSubmit = (e) => {
             <br></br>
              <b>{creator.location}</b>
              </div>
-            <button onClick={()=>{addToFavList(creator.name, creator.bio, creator.location)}} type="button" className= 'button'>Add To Favorites</button>
+            <button onClick={()=>{addToFavorite(creator.pcid, creator.name, creator.bio, creator.location)}} type="button" className= 'button'>Add To Favorites</button>
             {/* <AddtoFav addToFavList={addToFavList} name={creator.name} bio={creator.bio} location={creator.location}/> */}
           </div>
         ))}
-        <div className= 'favorite'>
-          {favoritesList}
-       </div>
      </div> 
   </div>   
        
