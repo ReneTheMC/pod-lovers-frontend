@@ -51,22 +51,23 @@ if (redirect) return <Redirect to="/favorite" />
   return (
   <div>
     <form onSubmit={handleSubmit}  action="/creators/results" method= 'POST' className="form-inline">
-        <label htmlFor="q">Search</label>
+        <label htmlFor="q"></label>
         <input value={q} onChange={handleChange} id="q"className="form-control mr-sm-2" type="search" placeholder="Creator" aria-label="Search"/>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-      <div style={{height: '100vh'}} >
+  <h1>Results</h1>
+      <div >
         {creators.map((creator, idx) => ( 
           <div className= 'result' key={idx}> 
-            <div key={creator.name}>  <img src={creator.imageUrl} width='60px' alt='creator'/> 
+            <div className="card" style={{width: '50rem', background: 'grey'}} key={creator.name}>  <img id="img" src={creator.imageUrl} width='200px' alt='creator-image'/> 
             <strong>{creator.name}</strong>
             <br></br>
             <em>{creator.bio}</em>
             <br></br>
              <b>{creator.location}</b>
              </div>
-            <button onClick={()=>{addToFavorite(creator.pcid, creator.name, creator.bio, creator.location, creator.imageUrl,creator.birthday,creator.followerCount)}} type="button" className= 'button'>Add To Favorites</button>
-            {/* <AddtoFav addToFavList={addToFavList} name={creator.name} bio={creator.bio} location={creator.location}/> */}
+            <button onClick={()=>{addToFavorite(creator.pcid, creator.name, creator.bio, creator.location, creator.imageUrl,creator.birthday,creator.followerCount)}} type="button" className="btn btn-secondary">Add To Favorites</button>
+            <hr />
           </div>
         ))}
      </div> 
