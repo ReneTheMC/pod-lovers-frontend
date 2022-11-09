@@ -22,7 +22,7 @@ function removeFromFavorites(id){
     })
     .then(response => {
           console.log(response)
-          setFavPodcastList(response.data.FavPodcastList)
+          setFavPodcastList(response.data.favPodcastList)
         })
         .catch(error => console.log(error));
 }
