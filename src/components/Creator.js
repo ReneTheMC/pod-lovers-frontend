@@ -76,3 +76,4 @@ if (redirect) return <Redirect to="/favorite" />
   }
 
   export default Creator;
+
