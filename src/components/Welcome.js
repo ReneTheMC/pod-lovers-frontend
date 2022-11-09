@@ -1,13 +1,10 @@
 import React from 'react';
-import PodcastList from './PodcastList';
-import Creator from './Creator';
+import Podcast from './Podcast';
 
 const Welcome = () => {
     return (
         <div>
-            <h1>Podlovers</h1>
-            <PodcastList />
-            <Creator />
+            <Podcast />
         </div>
     )
 }
