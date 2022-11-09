@@ -3,9 +3,7 @@ import React, {useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-// import Favorite from './Favorite';
 import setAuthToken from '../utils/setAuthToken'
-// import Card from './Card'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 function Creator() {
@@ -26,23 +24,8 @@ const handleSubmit = (e) => {
     })
     .catch(error => console.log(error))
   }
-  // const showCreators = () => {
-  //   console.log(creators)
-  //   if(creators.length) {
-  //     let creatorsArray= creators.map((creator) => (
-  //       <Card
-  //       key={creator}
-  //       name={creator.name}
-  //       bio={creator.bio}
-  //     />
-  //     ))
-  //     return {creatorsArray}
-  //   }else{
-  //     return <h1> There are no flights</h1>
-  //   }
-
-   //} 
-  function addToFavorite( pcid, name, bio, location, imageUrl) {
+ 
+  function addToFavorite( pcid, name, bio, location, imageUrl, birthday, followerCount) {
     setAuthToken(localStorage.getItem('jwtToken'))
     axios({
       method: 'post',
@@ -52,17 +35,19 @@ const handleSubmit = (e) => {
         name: name, 
         bio:bio,
         location: location,
-        imageUrl: imageUrl
+        imageUrl: imageUrl,
+        birthday: birthday,
+        followerCount
       }
     }).then(response => {
       console.log(response)
       setRedirect(true)
-      // setFavorites(response.data.creator)
-      // console.log(favorites)
     })
     .catch(error => console.log(error));
   }
 if (redirect) return <Redirect to="/favorite" />
+
+
   return (
   <div>
     <form onSubmit={handleSubmit}  action="/creators/results" method= 'POST' className="form-inline">
@@ -70,9 +55,7 @@ if (redirect) return <Redirect to="/favorite" />
         <input value={q} onChange={handleChange} id="q"className="form-control mr-sm-2" type="search" placeholder="Creator" aria-label="Search"/>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-
-    <h1>Your results</h1>
-      <div>
+      <div style={{height: '100vh'}} >
         {creators.map((creator, idx) => ( 
           <div className= 'result' key={idx}> 
             <div key={creator.name}>  <img src={creator.imageUrl} width='60px' alt='creator'/> 
@@ -82,7 +65,7 @@ if (redirect) return <Redirect to="/favorite" />
             <br></br>
              <b>{creator.location}</b>
              </div>
-            <button onClick={()=>{addToFavorite(creator.pcid, creator.name, creator.bio, creator.location)}} type="button" className= 'button'>Add To Favorites</button>
+            <button onClick={()=>{addToFavorite(creator.pcid, creator.name, creator.bio, creator.location, creator.imageUrl,creator.birthday,creator.followerCount)}} type="button" className= 'button'>Add To Favorites</button>
             {/* <AddtoFav addToFavList={addToFavList} name={creator.name} bio={creator.bio} location={creator.location}/> */}
           </div>
         ))}

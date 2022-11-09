@@ -9,7 +9,7 @@ const About = () => {
         <h1> The Developers</h1>
             <div className= 'dev'>
                 <div className="dev1">
-                    <img src="Hnin.gif" class='img' alt="Hnin"/>
+                    <img src="Hnin.gif" className='img' alt="Hnin"/>
                     <h4>Hnin Mabalo</h4>
                     <p>Hnin...Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Tempore dolorum excepturi, pariatur dolore fuga perferendis 
@@ -20,7 +20,7 @@ const About = () => {
                 </div>
 
                 <div className="dev2">
-                    <img src="Rene.gif" class='img' alt="Rene"/>
+                    <img src="Rene.gif" className='img' alt="Rene"/>
                     <h4>Rene Collins</h4>
                     <p>Rene...Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Tempore dolorum excepturi, pariatur dolore fuga perferendis 
@@ -31,7 +31,7 @@ const About = () => {
                 </div>
                
                 <div className="dev3">
-                    <img src="lizz.gif" class='img' alt="Hnin"/>
+                    <img src="lizz.gif" className='img' alt="Hnin"/>
                     <h4>Liz Rurangwa</h4>
                     <p>Liz...Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Tempore dolorum excepturi, pariatur dolore fuga perferendis 

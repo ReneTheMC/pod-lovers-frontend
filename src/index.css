@@ -55,6 +55,27 @@ font-size: 16px;
 .button:hover{
   background-color: #91c692;
 }
-.favoriteList{
-  align-items: flex-end;
+
+.fav{
+  margin:0px 0px 20px 0px;
+}
+.remove-button:hover{
+  background-color: rgb(219, 85, 85)
+}
+.carousel-inner img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%); 
+  width: 10%; 
+  margin: auto;
+}
+.carousel-caption h3 {
+  color: #fff !important;
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; 
+  }
+}  
+.d-block{
+  text-decoration:none;
 }
