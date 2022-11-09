@@ -4,6 +4,8 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import { Redirect } from 'react-router-dom';
 import setAuthToken from '../utils/setAuthToken';
+import {BoxArrowInRight} from 'react-bootstrap-icons'
+import {EnvelopeFill} from 'react-bootstrap-icons'
 
 const { REACT_APP_SERVER_URL } = process.env;
 
@@ -47,10 +49,10 @@ const Login = (props) => {
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
-                    <h2 className="py-2">Login</h2>
+                    <h2 className="py-2">Login <BoxArrowInRight/></h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Email <EnvelopeFill/> </label>
                             <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" />
                         </div>
                         <div className="form-group">

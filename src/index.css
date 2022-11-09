@@ -7,3 +7,75 @@ body {
 .logout-link {
   cursor: pointer;
 }
+.img{
+  width: 150px;
+  height:150px;
+  border-radius:50%;
+  padding: 20px 20px 20px 20px;
+}
+.dev{
+  display:inline-flex;
+}
+.about{
+  text-align: center;
+}
+
+.github{
+  color: rgb(119, 119, 119);
+}
+.github:hover{
+  color:black;
+}
+.linkedin{
+  color: rgb(119, 119, 119);
+}
+.linkedin:hover{
+  color:black;
+}
+.favorite{
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  visibility: none;
+  z-index: -1;
+}
+.result{
+  margin:0 0px 20px 0px;
+}
+.button{
+background-color: white;
+border-radius: 10%;
+color: rgb(7, 7, 7);
+padding: 5px 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+.button:hover{
+  background-color: #91c692;
+}
+
+.fav{
+  margin:0px 0px 20px 0px;
+}
+.remove-button:hover{
+  background-color: rgb(219, 85, 85)
+}
+.carousel-inner img {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%); 
+  width: 10%; 
+  margin: auto;
+}
+.carousel-caption h3 {
+  color: #fff !important;
+}
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none; 
+  }
+}  
+.d-block{
+  text-decoration:none;
+}

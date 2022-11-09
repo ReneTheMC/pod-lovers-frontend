@@ -18,8 +18,9 @@ import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Welcome from './components/Welcome';
-import Podcast from './components/Podcast';
-import FavPodcastList from './components/FavPodcastList';
+
+import Creator from './components/Creator';
+import Favorite from './components/Favorite';
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
   let token = localStorage.getItem('jwtToken');
@@ -81,8 +82,9 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
           <Route exact path="/" component={Welcome} />
           <Route path="/about" component={About} />
-          <Route path="/podcast" component={Podcast} />
-          <Route path="/favPodcastList" component={FavPodcastList} />
+          <Route path="/creator" component={Creator} />
+          <Route path="/favorite" component={Favorite} />
+
         </Switch>
       </div>
       <Footer />
