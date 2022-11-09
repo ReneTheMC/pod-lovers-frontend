@@ -4,6 +4,7 @@ import {BoxArrowInRight} from 'react-bootstrap-icons'
 import {BoxArrowLeft} from 'react-bootstrap-icons'
 import {PersonCircle} from 'react-bootstrap-icons'
 import {Search} from 'react-bootstrap-icons'
+import {HeartFill} from 'react-bootstrap-icons'
 
 const Navbar = (props) => {
     return (
@@ -25,7 +26,7 @@ const Navbar = (props) => {
                                 <NavLink className="nav-link"  to="/creator"><Search/> Creator</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link"  to="/favorite"><BoxArrowInRight/> Favorite</NavLink>
+                                <NavLink className="nav-link"  to="/favorite"><HeartFill/> Favorite</NavLink>
                             </li>
                     </ul>
                     {
