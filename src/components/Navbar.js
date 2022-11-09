@@ -1,11 +1,13 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import logo from '../image/podlogo2.png';
 
-import { BoxArrowInRight } from 'react-bootstrap-icons';
-import { BoxArrowLeft } from 'react-bootstrap-icons';
-import { PersonCircle } from 'react-bootstrap-icons';
-import { Search } from 'react-bootstrap-icons';
+import {BoxArrowInRight} from 'react-bootstrap-icons'
+import {BoxArrowLeft} from 'react-bootstrap-icons'
+import {PersonCircle} from 'react-bootstrap-icons'
+import {Search} from 'react-bootstrap-icons'
+import {HeartFill} from 'react-bootstrap-icons'
+
+import logo from '../image/podlogo2.png';
 
 const Navbar = (props) => {
     return (
@@ -29,12 +31,15 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/creator"><Search /> Creator</NavLink>
                         </li>
+                        
+                            <li className="nav-item">
+                                <NavLink className="nav-link"  to="/favorite"><HeartFill/> Favorite</NavLink>
+                            </li>
+
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/favorite"><BoxArrowInRight /> Favorite Creators</NavLink>
+                            <NavLink className="nav-link" to="/favPodcastList"><HeartFill//> Favorite Podcasts</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/favPodcastList"><BoxArrowInRight /> Favorite Podcasts</NavLink>
-                        </li>
+
                     </ul>
                     {
                         props.isAuth
