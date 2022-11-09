@@ -3,7 +3,7 @@ import React from 'react';
 const Welcome = () => {
     return (
         <div>
-            <h2>There are a few different methods for achieving peace of mind. Have you try listen Podcast? If not, start listen for popular podcast.</h2>
+            <h2 className='quote'>There are a few different methods for achieving peace of mind. Have you try listen Podcast? If not, start listen for popular podcast.</h2>
             <hr />
             <p>Start searching for popular podcast
                 <form action="/podcast" className="form-inline">
