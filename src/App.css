@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  color: white;
+  color: black;
   margin-bottom: 60px;
 }
 
@@ -27,4 +27,13 @@ body {
   width: 100%;
   height: 100vh;
   object-fit: cover;
+}
+
+#img {
+  border-radius: 50%;
+}
+
+.dev {
+  display: flex;
+  justify-content: space-between;
 }

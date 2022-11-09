@@ -51,7 +51,7 @@ if (redirect) return <Redirect to="/favPodcastList" />
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 
-    <h1>Your results</h1>
+    <h1>Results</h1>
       <div>
         {podcasts.map((podcast, idx) => ( 
           <div className= 'result' key={idx}> 
@@ -59,7 +59,7 @@ if (redirect) return <Redirect to="/favPodcastList" />
             <h3><strong>{podcast.title}</strong></h3>
             <p>{podcast.description}</p>
              </div>
-            <button onClick={()=>{addToFavPod(podcast.id, podcast.imageUrl, podcast.title, podcast.description)}} type="button" className= 'button'>Add To Favorites</button>
+            <button onClick={()=>{addToFavPod(podcast.id, podcast.imageUrl, podcast.title, podcast.description)}} type="button" className="btn btn-secondary">Add To Favorites</button>
            <hr />
           </div>
         ))}
