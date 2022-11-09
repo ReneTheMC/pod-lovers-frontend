@@ -1,233 +1,88 @@
-# Setup
+# PodLovers App
 
-Due to this project using an older package not fully supported on node17+ we'll need to run one initial command before we run our npm install. 
+![Logo](./src/image/podlogo2.png)
 
-If you are on mac or linux, run the following command:
+Visit PodLovers app website at: [PodLovers]
+<hr />
 
+## Getting Started
+
+`1` `Fork` & `Clone` this repo to your local computer.
+
+`2` Install the current dependencies that are listed inside of `package.json`
+```text
+npm install
 ```
-export NODE_OPTIONS=--openssl-legacy-provider
-```
+<hr />
 
-for windows users use one of these two commands:
+## Technologies
 
-command prompt: 
+* React App
+* Deployed to `Heroku`
+* `GraphQL`
+* `MongoDB` 
 
-```
-set NODE_OPTIONS=--openssl-legacy-provider
-```
+<hr />
 
-powershell:
+## What it includes
 
-```
-$env:NODE_OPTIONS = "--openssl-legacy-provider"
-```
+* Settings for `MongoDB`, `Mongoose`
+* Passport and passport-local for authentication
+* Flash messages for errors and successes
+* EJS Templating and EJS Layouts
 
-# MERN Authentication Frontend
+<hr />
 
-| Components | Links to Code | Description |
-| --- | --- | --- |
-| `App`| [`App`](https://github.com/romebell/mern-auth-frontend#app-component) | The component that manages the entire app |
-| `Signup`| [`Signup`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/signup.md) | Allow the user to signup |
-| `Login`| [`Login`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/login.md) | Allows the user to login to the app |
-| `Navbar`| [`Navbar`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/navbar.md) | Make `App` class component |
-| `Profile`| [`Profile`](#) | A component that displays the user profile information |
-| `setAuthToken`| [`setAuthToken`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/setAuthToken.md) | A utility function that adds a token to the `Authentication` header to manage current user |
-| `About`| [`About`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/other-components.md#about) | A component that decribes the app |
-| `Footer`| [`Footer`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/other-components.md#footer) | A footer that goes on each component |
-| `Welcome`| [`Welcome`](https://github.com/romebell/mern-auth-frontend/blob/main/docs/other-components.md#welcome) | A welcome page for the user |
+## ERD
 
-### `App Component`
+![ERD](./src/image/PodLovers%20ERD.png)
 
-### Imports for `App`
+<hr />
 
-```jsx
-// Imports
-import React, { useEffect, useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
-import setAuthToken from './utils/setAuthToken';
+## User Stories
 
-// CSS
-import './App.css';
+* As a user, I want to be able to search popular Podcasts so that I will know what podcasts and creators are released.
 
-// Components
-import Signup from './components/Signup';
-import About from './components/About';
-import Footer from './components/Footer';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import Welcome from './components/Welcome';
-```
+<hr />
 
-### `useState` inside `App`
+## Wireframes
 
-```jsx
-function App() {
-  // Set state values
-  const [currentUser, setCurrentUser] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-}
-```
+* Home page of the app
 
-### `PrivateRoute`
+![wireframes](./src/image/Podcasts%20HOME%20page.png)
 
-```jsx
-const PrivateRoute = ({ component: Component, ...rest}) => {
-  let token = localStorage.getItem('jwtToken');
-  console.log('===> Hitting a Private Route');
-  return <Route {...rest} render={(props) => {
-    return token ? <Component {...rest} {...props} /> : <Redirect to="/login"/>
-  }} />
-}
-```
+* Favorite Lists page of the app
 
-### `useEffect` inside `App`
+![wireframes](./src/image/podcast%20favorite%20lists%20page.png)
 
-```jsx
-useEffect(() => {
-    let token;
+* Details page of the app
 
-    if (!localStorage.getItem('jwtToken')) {
-      setIsAuthenticated(false);
-      console.log('====> Authenticated is now FALSE');
-    } else {
-      token = jwt_decode(localStorage.getItem('jwtToken'));
-      setAuthToken(localStorage.getItem('jwtToken'));
-      setCurrentUser(token);
-    }
-  }, []);
-```
+![wireframes](./src/image/podcast%20details%20page.png)
 
-### `nowCurrentUser`
+<hr />
 
-```jsx
-const nowCurrentUser = (userData) => {
-    console.log('===> nowCurrent is here.');
-    setCurrentUser(userData);
-    setIsAuthenticated(true);
-}
-```
+## Credits
 
-### `handleLogout`
+* Third party API: [Podchaser API](https://www.podchaser.com/profile/settings/api)
 
-```jsx
-const handleLogout = () => {
-    if (localStorage.getItem('jwtToken')) {
-        // remove token for localStorage
-        localStorage.removeItem('jwtToken');
-        setCurrentUser(null);
-        setIsAuthenticated(false);
-    }
-}
-```
+* Background video are downloaded from [Videezy](https://www.videezy.com/backgrounds/323-3d-flourish-background-loop-hd)
 
-### `return` of `App`
+## Developers 
 
-```jsx
-return (
-<div className="App">
-    <h1>MERN Authentication</h1>
-    <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-    <div className="container mt-5">
-        <Switch>
-            <Route path='/signup' component={Signup} />
-            <Route 
-            path="/login"
-            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
-            />
-            <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
-            <Route exact path="/" component={Welcome} />
-            <Route path="/about" component={About} />
-        </Switch>
-    </div>
-    <Footer />
+<div align="center">
+  <a href="https://github.com/ruraliz">
+    <img src="https://i.imgur.com/td6nLst.jpg"
+      alt="Contributors"
+      width="15%" target="_blank"/>
+  </a>
+    <a href="https://github.com/hninmabalo">
+    <img src="https://i.imgur.com/FMldvPj.jpg"
+      alt="Contributors"
+      width="15%" target="_blank"/>
+  </a>
+    <a href="https://github.com/ReneTheMC">
+    <img src="https://i.imgur.com/Vwsw8Y2.jpg"
+      alt="Contributors"
+      width="15%" target="_blank"/>
+  </a>
 </div>
-);
-```
-
-### Finished
-
-```jsx
-// Imports
-import React, { useEffect, useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
-import setAuthToken from './utils/setAuthToken';
-
-// CSS
-import './App.css';
-
-// Components
-import Signup from './components/Signup';
-import About from './components/About';
-import Footer from './components/Footer';
-import Login from './components/Login';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import Welcome from './components/Welcome';
-
-const PrivateRoute = ({ component: Component, ...rest}) => {
-  let token = localStorage.getItem('jwtToken');
-  console.log('===> Hitting a Private Route');
-  return <Route {...rest} render={(props) => {
-    return token ? <Component {...rest} {...props} /> : <Redirect to="/login"/>
-  }} />
-}
-
-function App() {
-  // Set state values
-  const [currentUser, setCurrentUser] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-
- 
-  useEffect(() => {
-    let token;
-
-    if (!localStorage.getItem('jwtToken')) {
-      setIsAuthenticated(false);
-      console.log('====> Authenticated is now FALSE');
-    } else {
-      token = jwt_decode(localStorage.getItem('jwtToken'));
-      setAuthToken(localStorage.getItem('jwtToken'));
-      setCurrentUser(token);
-    }
-  }, []);
-
-  const nowCurrentUser = (userData) => {
-    console.log('===> nowCurrent is here.');
-    setCurrentUser(userData);
-    setIsAuthenticated(true);
-  }
-
-  const handleLogout = () => {
-    if (localStorage.getItem('jwtToken')) {
-      // remove token for localStorage
-      localStorage.removeItem('jwtToken');
-      setCurrentUser(null);
-      setIsAuthenticated(false);
-    }
-  }
-
-  return (
-    <div className="App">
-      <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-      <div className="container mt-5">
-        <Switch>
-          <Route path='/signup' component={Signup} />
-          <Route 
-            path="/login"
-            render={(props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>}
-          />
-          <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
-          <Route exact path="/" component={Welcome} />
-          <Route path="/about" component={About} />
-        </Switch>
-      </div>
-      <Footer />
-    </div>
-  );
-}
-
-export default App;
-```
