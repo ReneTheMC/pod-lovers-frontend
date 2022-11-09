@@ -45,9 +45,6 @@ const Navbar = (props) => {
                             <li className="nav-item">
                                 <NavLink className="nav-link"  to="/login"><BoxArrowInRight/> Login</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link"  to="/favorite"><BoxArrowInRight/> Favorite</NavLink>
-                            </li>
                           </ul>
                     }
                 </div>
