@@ -6,6 +6,9 @@ import setAuthToken from './utils/setAuthToken';
 
 // CSS
 import './App.css';
+// import silkyBlue from './assets/SilkyBlue.mp4';
+import grey from './assets/Grey.mp4';
+
 
 // Components
 import Signup from './components/Signup';
@@ -15,6 +18,8 @@ import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Welcome from './components/Welcome';
+import Podcast from './components/Podcast';
+import FavPodcastList from './components/FavPodcastList';
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
   let token = localStorage.getItem('jwtToken');
@@ -61,6 +66,10 @@ function App() {
   return (
     <Router>
     <div className="App">
+        <video autoPlay loop muted>
+          {/* <source src={silkyBlue} type="video/mp4" /> */}
+          <source src={grey} type="video/mp4" />
+        </video>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
@@ -72,6 +81,8 @@ function App() {
           <PrivateRoute path="/profile" component={Profile} user={currentUser} handleLogout={handleLogout} />
           <Route exact path="/" component={Welcome} />
           <Route path="/about" component={About} />
+          <Route path="/podcast" component={Podcast} />
+          <Route path="/favPodcastList" component={FavPodcastList} />
         </Switch>
       </div>
       <Footer />

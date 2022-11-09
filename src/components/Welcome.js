@@ -1,10 +1,10 @@
 import React from 'react';
+import Podcast from './Podcast';
 
 const Welcome = () => {
     return (
         <div>
-            <h1>MERN Authentication</h1>
-            <p>Welcome to my app.</p>
+            <Podcast />
         </div>
     )
 }
