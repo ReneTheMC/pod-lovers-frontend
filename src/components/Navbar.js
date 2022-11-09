@@ -37,7 +37,8 @@ const Navbar = (props) => {
                             </li>
 
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/favPodcastList"><HeartFill//> Favorite Podcasts</NavLink>
+                            <NavLink className="nav-link" to="/favPodcastList"><HeartFill/> Favorite Podcasts</NavLink>
+
                         </li>
 
                     </ul>
