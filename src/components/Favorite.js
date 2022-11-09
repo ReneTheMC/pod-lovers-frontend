@@ -19,13 +19,15 @@ useEffect(() => {
         .catch(error => console.log(error));
 }, [])
 
-function removeFromFavorites(){
+function removeFromFavorites(pcid){
     axios({
         method: 'delete',
-        url: `${REACT_APP_SERVER_URL}/users/:id`
+        url: `${REACT_APP_SERVER_URL}/users/favorites/${pcid}`
+
     })
     .then(response => {
           console.log(response)
+          setFavorites(response.data.favorites)
         })
         .catch(error => console.log(error));
 }
@@ -44,7 +46,7 @@ const renderFavorites = () => {
         <br></br>
         <PersonHeart/>{f.followerCount}
         <br></br>
-        <button onClick={()=>{removeFromFavorites()}} type="button" className= 'remove-button'>Remove</button>
+        <button onClick={()=>{removeFromFavorites(f.pcid)}} type="button" className= 'remove-button'>Remove</button>
         </div>)
         return favoritesArray
     } else {
