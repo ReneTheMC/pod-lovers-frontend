@@ -6,6 +6,8 @@ import setAuthToken from './utils/setAuthToken';
 
 // CSS
 import './App.css';
+import grey from './assets/Grey.mp4';
+
 
 // Components
 import Signup from './components/Signup';
@@ -15,8 +17,12 @@ import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
 import Welcome from './components/Welcome';
+
 import Creator from './components/Creator';
 import Favorite from './components/Favorite';
+import Podcast from './components/Podcast';
+import FavPodcastList from './components/FavPodcastList';
+
 const PrivateRoute = ({ component: Component, ...rest}) => {
   let token = localStorage.getItem('jwtToken');
   console.log('===> Hitting a Private Route');
@@ -62,6 +68,9 @@ function App() {
   return (
     <Router>
     <div className="App">
+        <video autoPlay loop muted>
+          <source src={grey} type="video/mp4" />
+        </video>
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
       <div className="container mt-5">
         <Switch>
@@ -75,6 +84,9 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/creator" component={Creator} />
           <Route path="/favorite" component={Favorite} />
+          <Route path="/podcast" component={Podcast} />
+          <Route path="/favPodcastList" component={FavPodcastList} />
+
         </Switch>
       </div>
       <Footer />
