@@ -70,6 +70,7 @@ const Welcome = () => {
          />
       </Carousel.Item> 
       </Carousel>
+
             <h2 className= 'homep'>There are a few different methods for achieving peace of mind. Have you try listen Podcast? If not, start listen for popular podcast.</h2>
 
             <hr />
