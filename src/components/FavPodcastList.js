@@ -1,6 +1,7 @@
 import React, {useState , useEffect} from 'react';
 import axios from 'axios';
-import setAuthToken from '../utils/setAuthToken'
+import setAuthToken from '../utils/setAuthToken';
+import Carousel from 'react-bootstrap/Carousel';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 function FavPodcastList()  {
@@ -44,6 +45,44 @@ const renderFavPodcastList = () => {
 }
     return(
     <div>
+         <Carousel>
+      <Carousel.Item>
+        <img
+          className="d-block"
+          src="homeimg2.gif"
+          alt="First slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block"
+          src="homeimg3.gif"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block"
+          src="homeimg5.gif"
+          alt="Third slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-10"
+          src="homeimg6.gif"
+          alt="Second slide"
+        />
+      </Carousel.Item> 
+      <Carousel.Item>
+        <img
+          className="d-block w-10"
+          src="homeimg8.gif"
+          alt="Second slide"
+         />
+      </Carousel.Item> 
+
+    </Carousel>
         {renderFavPodcastList()}
     </div>
     )

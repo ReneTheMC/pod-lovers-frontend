@@ -14,8 +14,7 @@ useEffect(() => {
     setAuthToken(localStorage.getItem('jwtToken'))
     axios.get(`${REACT_APP_SERVER_URL}/users/getfavorites`)
         .then(response => {
-            setFavorites(response.data.favorites);
-        })
+            setFavorites(response.data.favorites);        })
         .catch(error => console.log(error));
 }, [])
 
@@ -34,7 +33,7 @@ function removeFromFavorites(pcid){
 
 const renderFavorites = () => {
     if (favorites.length) {
-        let favoritesArray = favorites.map((f, idx) => <div ClassName= 'fav' key = {idx}> 
+        let favoritesArray = favorites.map((f, idx) => <div key = {idx}> 
         <img src={f.imageUrl}  width='60px' alt='creator'/>
         <b>{f.name}</b>
         <br></br>
@@ -54,7 +53,7 @@ const renderFavorites = () => {
     }
 }
     return(
-    <div style={{height: '100vh'}} >
+    <div className= 'creator-fav'style={{height: '100vh'}} >
         <Carousel>
       <Carousel.Item>
         <img
