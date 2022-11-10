@@ -1,6 +1,4 @@
 import React from 'react';
-import PodcastList from './PodcastList';
-import Creator from './Creator';
 import Carousel from 'react-bootstrap/Carousel';
 
 const Welcome = () => {
