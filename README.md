@@ -2,7 +2,7 @@
 
 ![Logo](./src/image/podlogo2.png)
 
-Visit PodLovers app website at: [PodLovers]
+Visit PodLovers app website at: [PodLovers](https://git.heroku.com/podlovers-app.git)
 <hr />
 
 ## Getting Started
@@ -30,6 +30,12 @@ npm install
 * Passport and passport-local for authentication
 * Flash messages for errors and successes
 * EJS Templating and EJS Layouts
+
+<hr />
+
+## App Screen
+
+![AppScreen](./src/image/App%20Screen.png)
 
 <hr />
 
@@ -66,6 +72,8 @@ npm install
 * Third party API: [Podchaser API](https://www.podchaser.com/profile/settings/api)
 
 * Background video are downloaded from [Videezy](https://www.videezy.com/backgrounds/323-3d-flourish-background-loop-hd)
+
+* Logo created at [Piskelapp](https://www.piskelapp.com/)
 
 ## Developers 
 
