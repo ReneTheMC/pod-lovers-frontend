@@ -59,7 +59,7 @@ if (redirect) return <Redirect to="/favorite" />
       <div >
         {creators.map((creator, idx) => ( 
           <div className= 'result' key={idx}> 
-            <div className="card" style={{width: '50rem', background: 'grey'}} key={creator.name}>  <img id="img" src={creator.imageUrl} width='200px' alt='creator-image'/> 
+            <div className="card" style={{width: '50rem', background: 'grey'}} key={creator.name}>  <img id="img" src={creator.imageUrl} width='200px' alt='creatorimage'/> 
             <strong>{creator.name}</strong>
             <br></br>
             <em>{creator.bio}</em>
