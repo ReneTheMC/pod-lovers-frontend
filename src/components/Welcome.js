@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 const Welcome = () => {
     return (
         <div>
-
+    <h1 className= 'title'>Podlovers</h1>
     <Carousel>
       <Carousel.Item>
         <img
@@ -70,8 +70,7 @@ const Welcome = () => {
          />
       </Carousel.Item> 
       </Carousel>
-            <h1>Podlovers</h1>
-            <h2>There are a few different methods for achieving peace of mind. Have you try listen Podcast? If not, start listen for popular podcast.</h2>
+            <h2 className= 'homep'>There are a few different methods for achieving peace of mind. Have you try listen Podcast? If not, start listen for popular podcast.</h2>
 
             <hr />
             <p>Start searching for popular podcast
