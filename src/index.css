@@ -56,20 +56,17 @@ font-size: 16px;
   background-color: #91c692;
 }
 
-.fav{
-  margin:0px 0px 20px 0px;
-}
 .remove-button:hover{
   background-color: rgb(219, 85, 85)
 }
 .carousel-inner img {
   -webkit-filter: grayscale(0%);
   filter: grayscale(0%); 
-  width: 10%; 
+  width: 20%; 
   margin: auto;
 }
 .carousel-caption h3 {
-  color: #fff !important;
+  color: rgb(16, 15, 15) !important;
 }
 @media (max-width: 600px) {
   .carousel-caption {
@@ -78,4 +75,13 @@ font-size: 16px;
 }  
 .d-block{
   text-decoration:none;
+}
+.footer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  right:0;
+}
+.creator-fav{
+
 }
