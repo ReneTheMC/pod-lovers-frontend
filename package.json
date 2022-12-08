@@ -1,6 +1,7 @@
 {
   "name": "mern-auth-client",
   "version": "0.1.0",
+  "engines": {"node":"18.10.0" },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
